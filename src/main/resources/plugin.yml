@@ -1,0 +1,4 @@
+name: PrimateWorld
+version: '${project.version}'
+main: ru.samsonium.primate.world.PrimateWorld
+api-version: '1.20'
