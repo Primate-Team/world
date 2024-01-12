@@ -2,3 +2,12 @@ name: PrimateWorld
 version: '${project.version}'
 main: ru.samsonium.primate.world.PrimateWorld
 api-version: '1.20'
+commands:
+
+  # Spawn
+  spawn:
+    description: Переместиться на спавн
+    usage: /<command>
+  setspawn:
+    description: Установить точку спавна
+    usage: /<command>
