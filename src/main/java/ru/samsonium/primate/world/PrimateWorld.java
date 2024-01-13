@@ -1,6 +1,7 @@
 package ru.samsonium.primate.world;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import ru.samsonium.primate.world.spawn.SetSpawnCommand;
 import ru.samsonium.primate.world.spawn.SpawnCommand;
 
 import java.util.Objects;
@@ -13,6 +14,7 @@ public final class PrimateWorld extends JavaPlugin {
         // Register commands
         try {
             Objects.requireNonNull(getCommand("spawn")).setExecutor(new SpawnCommand());
+            Objects.requireNonNull(getCommand("setspawn")).setExecutor(new SetSpawnCommand());
         } catch (NullPointerException e) {
             getLogger().log(Level.SEVERE, e.getMessage());
             getServer().getPluginManager().disablePlugin(this);
