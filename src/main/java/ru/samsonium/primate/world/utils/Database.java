@@ -9,7 +9,12 @@ public class Database {
     protected static Database instance;
     protected Connection cn;
 
-    protected Database(String path) throws SQLException {
+    protected Database(String name) throws SQLException {
+        File pluginDir = PrimateWorld.get().getDataFolder();
+        if (!pluginDir.exists())
+            pluginDir.mkdirs();
+        String path = pluginDir.getAbsolutePath() + "/" + name + ".db";
+
         cn = DriverManager.getConnection("jdbc:sqlite:" + path);
     }
 
