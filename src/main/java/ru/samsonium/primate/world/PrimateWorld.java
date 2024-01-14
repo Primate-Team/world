@@ -1,6 +1,7 @@
 package ru.samsonium.primate.world;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import ru.samsonium.primate.world.home.HomeCommand;
 import ru.samsonium.primate.world.home.HomeDB;
 import ru.samsonium.primate.world.home.SetHomeCommand;
 import ru.samsonium.primate.world.spawn.SetSpawnCommand;
@@ -21,8 +22,9 @@ public final class PrimateWorld extends JavaPlugin {
             // Register commands
             Objects.requireNonNull(getCommand("spawn")).setExecutor(new SpawnCommand());
             Objects.requireNonNull(getCommand("setspawn")).setExecutor(new SetSpawnCommand());
-        } catch (NullPointerException e) {
+            Objects.requireNonNull(getCommand("home")).setExecutor(new HomeCommand());
             Objects.requireNonNull(getCommand("sethome")).setExecutor(new SetHomeCommand());
+        } catch (Exception e) {
             getLogger().log(Level.SEVERE, e.getMessage());
             getServer().getPluginManager().disablePlugin(this);
         }
