@@ -2,6 +2,7 @@ package ru.samsonium.primate.world;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.samsonium.primate.world.back.BackCommand;
+import ru.samsonium.primate.world.back.DeathListener;
 import ru.samsonium.primate.world.home.HomeCommand;
 import ru.samsonium.primate.world.home.HomeDB;
 import ru.samsonium.primate.world.home.SetHomeCommand;
@@ -34,6 +35,9 @@ public final class PrimateWorld extends JavaPlugin {
 
             // Register tab completes
             Objects.requireNonNull(getCommand("point")).setTabCompleter(new PointCommandAutocomplete());
+
+            // Register listeners
+            getServer().getPluginManager().registerEvents(new DeathListener(), this);
         } catch (Exception e) {
             getLogger().log(Level.SEVERE, e.getMessage());
             getServer().getPluginManager().disablePlugin(this);
