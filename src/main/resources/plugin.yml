@@ -11,3 +11,11 @@ commands:
   setspawn:
     description: Установить точку спавна
     usage: /<command>
+
+  # Home
+  home:
+    description: Переместиться домой
+    usage: /<command>
+  sethome:
+    description: Установить точку дома
+    usage: /<command>
