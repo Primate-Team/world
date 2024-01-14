@@ -49,8 +49,6 @@ public class PointDB extends Database {
      */
     @Nullable public ArrayList<String> getListByUUID(String uuid) {
         try (ResultSet rs = queryWithResult("SELECT name FROM points WHERE uuid=?", uuid)) {
-            if (!rs.next()) return null;
-
             ArrayList<String> result = new ArrayList<>();
             while (rs.next())
                 result.add(rs.getString("name"));
