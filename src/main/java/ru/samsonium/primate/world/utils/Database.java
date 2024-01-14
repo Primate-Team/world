@@ -39,10 +39,7 @@ public class Database {
             }
         }
 
-        ResultSet rs = stmt.executeQuery();
-        stmt.close();
-
-        return rs;
+        return stmt.executeQuery();
     }
 
     /**
