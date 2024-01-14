@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import ru.samsonium.primate.world.home.HomeCommand;
 import ru.samsonium.primate.world.home.HomeDB;
 import ru.samsonium.primate.world.home.SetHomeCommand;
+import ru.samsonium.primate.world.point.PointDB;
 import ru.samsonium.primate.world.spawn.SetSpawnCommand;
 import ru.samsonium.primate.world.spawn.SpawnCommand;
 
@@ -18,6 +19,7 @@ public final class PrimateWorld extends JavaPlugin {
 
             // Initialize databases
             HomeDB.init();
+            PointDB.init();
 
             // Register commands
             Objects.requireNonNull(getCommand("spawn")).setExecutor(new SpawnCommand());
