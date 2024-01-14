@@ -23,4 +23,9 @@ commands:
   # Point
   point:
     description: Управление точками
-    usage: /<point> <подкоманда>
+    usage: /<command> <подкоманда>
+
+  # Back
+  back:
+    description: Возвращение на место смерти
+    usage: /<command>

@@ -1,6 +1,7 @@
 package ru.samsonium.primate.world;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import ru.samsonium.primate.world.back.BackCommand;
 import ru.samsonium.primate.world.home.HomeCommand;
 import ru.samsonium.primate.world.home.HomeDB;
 import ru.samsonium.primate.world.home.SetHomeCommand;
@@ -29,6 +30,7 @@ public final class PrimateWorld extends JavaPlugin {
             Objects.requireNonNull(getCommand("home")).setExecutor(new HomeCommand());
             Objects.requireNonNull(getCommand("sethome")).setExecutor(new SetHomeCommand());
             Objects.requireNonNull(getCommand("point")).setExecutor(new PointCommand());
+            Objects.requireNonNull(getCommand("back")).setExecutor(new BackCommand());
 
             // Register tab completes
             Objects.requireNonNull(getCommand("point")).setTabCompleter(new PointCommandAutocomplete());
