@@ -5,6 +5,7 @@ import ru.samsonium.primate.world.home.HomeCommand;
 import ru.samsonium.primate.world.home.HomeDB;
 import ru.samsonium.primate.world.home.SetHomeCommand;
 import ru.samsonium.primate.world.point.PointCommand;
+import ru.samsonium.primate.world.point.PointCommandAutocomplete;
 import ru.samsonium.primate.world.point.PointDB;
 import ru.samsonium.primate.world.spawn.SetSpawnCommand;
 import ru.samsonium.primate.world.spawn.SpawnCommand;
@@ -28,6 +29,9 @@ public final class PrimateWorld extends JavaPlugin {
             Objects.requireNonNull(getCommand("home")).setExecutor(new HomeCommand());
             Objects.requireNonNull(getCommand("sethome")).setExecutor(new SetHomeCommand());
             Objects.requireNonNull(getCommand("point")).setExecutor(new PointCommand());
+
+            // Register tab completes
+            Objects.requireNonNull(getCommand("point")).setTabCompleter(new PointCommandAutocomplete());
         } catch (Exception e) {
             getLogger().log(Level.SEVERE, e.getMessage());
             getServer().getPluginManager().disablePlugin(this);
