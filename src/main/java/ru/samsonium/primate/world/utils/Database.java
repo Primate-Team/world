@@ -47,7 +47,21 @@ public class Database {
             }
         }
 
-        return stmt.executeQuery();
+        ResultSet rs = stmt.executeQuery();
+        stmt.close();
+
+        return rs;
+    }
+
+    /**
+     * Execute query
+     * @param sql SQL query
+     * @throws SQLException if SQL has errors
+     */
+    protected void query(String sql) throws SQLException {
+        Statement stmt = cn.createStatement();
+        stmt.execute(sql);
+        stmt.close();
     }
 
     /**
