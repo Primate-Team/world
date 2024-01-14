@@ -19,3 +19,8 @@ commands:
   sethome:
     description: Установить точку дома
     usage: /<command>
+
+  # Point
+  point:
+    description: Управление точками
+    usage: /<point> <подкоманда>
