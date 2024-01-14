@@ -19,19 +19,6 @@ public class Database {
     }
 
     /**
-     * Initialize database
-     */
-    protected void init(String dbName) throws SQLException {
-        File pluginDir = PrimateWorld.get().getDataFolder();
-        if (!pluginDir.exists())
-            pluginDir.mkdirs();
-        String path = pluginDir.getAbsolutePath() + "/" + dbName + "db";
-
-        if (instance != null) return;
-        instance = new Database(path);
-    }
-
-    /**
      * Execute query with result
      * @param sql SQL query
      * @param params List of params in statement
@@ -67,13 +54,5 @@ public class Database {
         Statement stmt = cn.createStatement();
         stmt.execute(sql);
         stmt.close();
-    }
-
-    /**
-     * Get db class instance
-     * @return Database instance
-     */
-    public static Database get() {
-        return instance;
     }
 }
