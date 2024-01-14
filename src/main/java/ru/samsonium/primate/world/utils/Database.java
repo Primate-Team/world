@@ -6,7 +6,6 @@ import java.io.File;
 import java.sql.*;
 
 public class Database {
-    protected static Database instance;
     protected Connection cn;
 
     protected Database(String name) throws SQLException {

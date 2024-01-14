@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 
 public class PointDB extends Database {
+    private static PointDB instance;
+
     protected PointDB() throws SQLException {
         super("points");
 
@@ -37,7 +39,7 @@ public class PointDB extends Database {
     }
 
     public static PointDB get() {
-        return (PointDB) instance;
+        return instance;
     }
 
     /**

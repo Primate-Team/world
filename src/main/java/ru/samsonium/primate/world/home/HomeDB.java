@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 
 public class HomeDB extends Database {
+    private static HomeDB instance;
+
     protected HomeDB(String name) throws SQLException {
         super(name);
 
@@ -33,7 +35,7 @@ public class HomeDB extends Database {
     }
 
     public static HomeDB get() {
-        return (HomeDB) instance;
+        return instance;
     }
 
     /**
